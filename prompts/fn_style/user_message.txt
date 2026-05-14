@@ -1,0 +1,10 @@
+# User Message Example
+# (Generated from a fixed demo dialogue for illustration)
+# --------------------------------------------------------
+
+## Conversation History
+[turn 1] User: I'm looking for a cheap hotel in the east part of town.
+           System: I found a few options. Do you have any other requirements?
+[turn 2] User: Yes, it needs free parking and free wifi. I'll be staying for 3 nights.
+
+Extract the complete cumulative dialogue state at this point. Output ONLY the JSON block.

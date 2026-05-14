@@ -1,0 +1,58 @@
+# ---- Data & references (large, regenerable, or copyright-restricted) ----
+data/
+relative_researchs/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- Virtual environments ----
+.venv/
+venv/
+env/
+ENV/
+
+# ---- Secrets ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# ---- Large prediction outputs (regenerable via pipeline) ----
+results/preds_*.json
+results/*_pilot200*.json
+results/*_smoke*.json
+results/pilot_50.json
+
+# ---- Claude Code local state ----
+.claude/
+
+# ---- IDE / OS ----
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Logs ----
+*.log
+pilot*.txt
+
+# ---- Empty placeholder ----
+paper/
