@@ -25,9 +25,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from prompt_builder import VARIANTS, ALL_DOMAINS
-from utils import RESULTS_DIR, eval_report_path, ablation_summary_path
-
+from prompt_builder import ALL_DOMAINS, VARIANTS
+from utils import ablation_summary_path, eval_report_path
 
 # 固定的列顺序，保证论文表格每次重跑结构一致
 CORE_METRICS = ["JGA", "Slot_F1", "Slot_Precision", "Slot_Recall"]

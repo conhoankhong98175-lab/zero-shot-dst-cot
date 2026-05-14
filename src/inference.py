@@ -19,20 +19,21 @@ Zero-shot DST 推理主流程，支持多 prompt 变体 (OpenAI 官方 API)。
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import sys
 import time
-import argparse
 from pathlib import Path
-from tqdm import tqdm
+
 import httpx
 from openai import OpenAI, RateLimitError
+from tqdm import tqdm
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from prompt_builder import build_prompt, list_variants, VARIANTS
 from parser import extract_belief, extract_reasoning
+from prompt_builder import VARIANTS, build_prompt, list_variants
 from utils import TEST_PATH, prediction_path
 
 
@@ -153,7 +154,7 @@ def run_inference(test_path: Path,
             done_keys = {(r["dial_id"], r["turn_id"]) for r in results}
             print(f"♻️  发现已有结果 {len(done_keys)} 条，将跳过这些样本。")
         except (json.JSONDecodeError, KeyError):
-            print(f"⚠️  已有结果文件损坏，重新开始。")
+            print("⚠️  已有结果文件损坏，重新开始。")
             results = []
 
     print(f"🧪 Variant: {variant}  —  {VARIANTS[variant]['description']}")

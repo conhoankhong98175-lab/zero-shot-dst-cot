@@ -23,8 +23,8 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+from evaluator import filter_by_domain, normalize_belief
 from utils import RESULTS_DIR, TEST_TAXI_PATH, prediction_path
-from evaluator import normalize_belief, filter_by_domain
 
 
 def _load_preds(variant: str, tag: str) -> dict:

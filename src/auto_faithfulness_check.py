@@ -51,9 +51,8 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from utils import RESULTS_DIR, TEST_TAXI_PATH, prediction_path
 from evaluator import eval_single
-
+from utils import RESULTS_DIR, TEST_TAXI_PATH, prediction_path
 
 # ── 配置 ────────────────────────────────────────────────────
 DEFAULT_THRESHOLD = 0.40        # token 覆盖率阈值
@@ -91,8 +90,8 @@ STOPWORDS = {
     "so","then","thus","therefore","still","just","not","do","does","did","have","has","had",
     "can","could","would","should","will","may","might","must",
     "with","from","into","onto","about","over","under","through",
-    "as","than","then","there","here","now",
-    "would","like","want","wants","wanted","need","needs","needed","looking","look",
+    "as","than","there","here","now",
+    "like","want","wants","wanted","need","needs","needed","looking","look",
 }
 
 
@@ -327,10 +326,10 @@ def run_auto_check(tag: str = "taxi_full",
     print(f"\n✅ 初标已写入: {out}")
     print(f"   分布: {counts}")
     print(f"📋 摘要: {summary_path}")
-    print(f"\n下一步 (人工 review):")
+    print("\n下一步 (人工 review):")
     print(f"  1. 用 Excel 打开 {out.name}, 重点核查 reasoning_faithful 列")
-    print(f"  2. 改正错判的几行（note 列已给出诊断细节）")
-    print(f"  3. 另存为 faithfulness_annotation.csv 即可被 select_case_studies / notebook 读取")
+    print("  2. 改正错判的几行（note 列已给出诊断细节）")
+    print("  3. 另存为 faithfulness_annotation.csv 即可被 select_case_studies / notebook 读取")
     return out
 
 

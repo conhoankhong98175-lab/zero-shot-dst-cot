@@ -16,12 +16,12 @@ from __future__ import annotations
 
 import argparse
 import sys
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from prompt_builder import build_prompt, build_system_prompt, list_variants, VARIANTS
+from prompt_builder import VARIANTS, build_prompt, list_variants
 
 PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
 
@@ -109,8 +109,8 @@ def export_readme(variants: list[str]) -> None:
     ]
     for v in variants:
         lines.append(f"├── {v}/")
-        lines.append(f"│   ├── system_prompt.txt        ← full system prompt")
-        lines.append(f"│   └── user_message.txt         ← example user turn")
+        lines.append("│   ├── system_prompt.txt        ← full system prompt")
+        lines.append("│   └── user_message.txt         ← example user turn")
     lines.append("```")
     lines += [
         "",

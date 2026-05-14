@@ -26,7 +26,6 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from utils import RESULTS_DIR, ablation_summary_path
 
-
 TARGETS: dict[str, tuple[str, str]] = {
     # variant -> (主要错误类型, 设计印证文本)
     "ab_no_s1": ("hallucinated_slot", "Step 1 过滤跨域溢出 (Domain Activation Check)"),
@@ -85,7 +84,7 @@ def build_mapping(tag: str) -> Path:
         "|---|---|---|---|---|---|---|",
     ]
 
-    for variant, (target_err, design_text) in TARGETS.items():
+    for variant, (target_err, _design_text) in TARGETS.items():
         if variant not in variants:
             lines.append(
                 f"| `{variant}` | — | — | — | — | {target_err} | (缺失) |"

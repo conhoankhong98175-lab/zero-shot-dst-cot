@@ -25,8 +25,8 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from utils import RESULTS_DIR, TEST_TAXI_PATH, prediction_path
 from evaluator import eval_single
+from utils import RESULTS_DIR, TEST_TAXI_PATH, prediction_path
 
 
 def _format_history(history: list) -> str:

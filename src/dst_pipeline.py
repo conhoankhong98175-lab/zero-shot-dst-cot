@@ -26,13 +26,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from prompt_builder import list_variants
-from inference import run_inference
+from ablation_runner import SUITES, run_suite
 from evaluator import evaluate, print_report
-from ablation_runner import run_suite, SUITES
-from utils import (RESULTS_DIR, eval_report_path, prediction_path,
-                   resolve_test_path)
-
+from inference import run_inference
+from prompt_builder import list_variants
+from utils import RESULTS_DIR, eval_report_path, prediction_path, resolve_test_path
 
 LOG_PATH = RESULTS_DIR / "experiment_log.jsonl"
 

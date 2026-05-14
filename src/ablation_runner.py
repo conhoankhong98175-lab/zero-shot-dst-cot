@@ -27,12 +27,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from prompt_builder import VARIANTS
-from inference import run_inference
 from evaluator import evaluate, print_report
-from utils import (RESULTS_DIR, eval_report_path, prediction_path,
-                   resolve_test_path)
-
+from inference import run_inference
+from prompt_builder import VARIANTS
+from utils import RESULTS_DIR, eval_report_path, prediction_path, resolve_test_path
 
 # ── 套件定义 ─────────────────────────────────────────────────
 SUITES: dict[str, list[str]] = {

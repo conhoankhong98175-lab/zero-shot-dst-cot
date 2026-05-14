@@ -11,8 +11,8 @@ evaluator.py  v4  —  最终版
 
 import json
 import re
-from pathlib import Path
 from collections import defaultdict
+from pathlib import Path
 
 # 五大领域常量（与 prompt_builder.SLOT_SCHEMA 键名保持一致）
 _DOMAINS = ["hotel", "restaurant", "attraction", "taxi", "train"]

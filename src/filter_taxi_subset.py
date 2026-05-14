@@ -24,9 +24,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
-import sys
 sys.path.insert(0, str(Path(__file__).parent))
 from utils import DATA_DIR, TEST_PATH
 
@@ -112,7 +112,7 @@ def main():
         print(f"  {k:<28}: {v}")
     print("=" * 60)
     print(f"\n下一步：把 utils.TEST_PATH 切到 {args.output}，或在 dst_pipeline")
-    print(f"中传入 --target_domain taxi 以激活子集模式。")
+    print("中传入 --target_domain taxi 以激活子集模式。")
 
 
 if __name__ == "__main__":
