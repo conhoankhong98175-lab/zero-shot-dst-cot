@@ -1,0 +1,20 @@
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = [".venv", "venv", "build", "dist", "notebooks", "data", "relative_researchs"]
+
+[tool.ruff.lint]
+# Conservative set — catches real bugs without nitpicking style.
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes (unused imports, undefined names, etc.)
+    "W",   # pycodestyle warnings
+    "I",   # isort (import ordering)
+    "B",   # bugbear (likely bugs)
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long — handled by formatter / not worth blocking on
+    "E402",  # module-level import not at top — needed for sys.path hack in src/*.py
+    "B008",  # function call in default arg — often intentional in CLI argparse
+]

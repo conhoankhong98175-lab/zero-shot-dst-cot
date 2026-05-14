@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install runtime deps + ruff
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install ruff
+
+      - name: Ruff lint
+        run: ruff check src/
+
+      - name: Syntax check (py_compile)
+        run: python -m compileall -q src
+
+      - name: Import smoke test
+        run: |
+          cd src
+          python -c "import prompt_builder, parser, utils, evaluator, ablation_runner, compare_ablations"
